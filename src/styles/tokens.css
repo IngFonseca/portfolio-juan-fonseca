@@ -1,0 +1,66 @@
+:root {
+  color-scheme: dark;
+
+  /* Color: tema oscuro (base) */
+  --color-bg: #0b1220;
+  --color-surface-1: #131c2e;
+  --color-surface-2: #1b2740;
+  --color-line: #26334d;
+  --color-control-border: #5f7396;
+  --color-text: #e8edf5;
+  --color-text-muted: #93a0b8;
+  --color-accent: #3ddc97;
+  --color-on-accent: #06150e;
+  --color-warning: #ffb454;
+
+  /* Tipografía */
+  --font-display: "Bricolage Grotesque Variable", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Geist Variable", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  --text-h1: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);
+  --text-h2: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem);
+  --text-h3: 1.375rem;
+  --text-body: 1.0625rem;
+  --text-small: 0.875rem;
+  --text-mono: 0.8125rem;
+
+  /* Espaciado (base de 4 px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-padding: clamp(4.5rem, 3rem + 6vw, 8rem);
+
+  /* Formas */
+  --radius-surface: 16px;
+  --radius-pill: 999px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-reveal: 320ms;
+}
+
+/* Banda clara (Formación y Certificaciones): redefine los mismos nombres */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg: #eef2f6;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #ffffff;
+  --color-line: #d5dde7;
+  --color-control-border: #7c8ca6;
+  --color-text: #0b1220;
+  --color-text-muted: #4a5a73;
+  --color-accent: #0b6b44;
+}
