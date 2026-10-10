@@ -1,0 +1,44 @@
+.section {
+  padding-block: var(--section-padding);
+  border-top: 1px solid var(--color-line);
+}
+
+.intro {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+}
+
+.track {
+  /* Distancia hasta el borde del contenedor de 1200 px, para alinear la primera tarjeta con el título */
+  --edge: max(var(--gutter), calc((100% - var(--container)) / 2));
+
+  margin-top: var(--space-8);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--edge);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-control-border) transparent;
+}
+
+.list {
+  display: flex;
+  gap: var(--space-4);
+  width: max-content;
+  margin: 0;
+  padding: var(--space-2) var(--edge) var(--space-4);
+  list-style: none;
+}
+
+.item {
+  flex: none;
+  width: min(86vw, 380px);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .item {
+    width: 420px;
+  }
+}

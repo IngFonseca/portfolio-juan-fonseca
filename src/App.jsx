@@ -2,9 +2,10 @@ import Navbar from './components/Navbar'
 import { navItems } from './data/navigation'
 import About from './sections/About'
 import Hero from './sections/Hero'
+import Projects from './sections/Projects'
 import Technologies from './sections/Technologies'
 
-const built = ['inicio', 'sobre-mi', 'tecnologias']
+const built = ['inicio', 'sobre-mi', 'tecnologias', 'proyectos']
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <About />
         <Technologies />
+        <Projects />
         {navItems
           .filter((item) => !built.includes(item.id))
           .map((item) => (

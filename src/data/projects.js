@@ -107,3 +107,11 @@ export const projects = [
     links: { github: null, demo: null, download: null },
   },
 ]
+
+export const categoryLabels = {
+  desktop: 'Escritorio',
+  web: 'Web',
+  game: 'Juego',
+  academic: 'Académico',
+  technical: 'Técnico',
+}
