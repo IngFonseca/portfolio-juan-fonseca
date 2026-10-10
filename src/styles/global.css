@@ -83,3 +83,7 @@ button {
   background: var(--color-accent);
   color: var(--color-on-accent);
 }
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
