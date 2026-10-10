@@ -1,6 +1,9 @@
 import Navbar from './components/Navbar'
 import { navItems } from './data/navigation'
+import About from './sections/About'
 import Hero from './sections/Hero'
+
+const pending = ['inicio', 'sobre-mi']
 
 function App() {
   return (
@@ -8,8 +11,9 @@ function App() {
       <Navbar />
       <main id="contenido">
         <Hero />
+        <About />
         {navItems
-          .filter((item) => item.id !== 'inicio')
+          .filter((item) => !pending.includes(item.id))
           .map((item) => (
             <section
               key={item.id}
