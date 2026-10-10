@@ -2,8 +2,9 @@ import Navbar from './components/Navbar'
 import { navItems } from './data/navigation'
 import About from './sections/About'
 import Hero from './sections/Hero'
+import Technologies from './sections/Technologies'
 
-const pending = ['inicio', 'sobre-mi']
+const built = ['inicio', 'sobre-mi', 'tecnologias']
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <main id="contenido">
         <Hero />
         <About />
+        <Technologies />
         {navItems
-          .filter((item) => !pending.includes(item.id))
+          .filter((item) => !built.includes(item.id))
           .map((item) => (
             <section
               key={item.id}
