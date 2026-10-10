@@ -1,17 +1,23 @@
+import { navItems } from './data/navigation'
+import { profile } from './data/profile'
+
 function App() {
   return (
-    <main style={{ padding: 'var(--gutter)' }}>
-      <h1>Juan Fernando Fonseca Martínez</h1>
-        <p>Portafolio en construcción. Prueba de despliegue.</p>
-      <p
-        style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: 'var(--text-mono)',
-          color: 'var(--color-accent)',
-        }}
-      >
-        Python · React · MySQL
-      </p>
+    <main id="contenido">
+      {navItems.map((item) => (
+        <section
+          key={item.id}
+          id={item.id}
+          style={{
+            minHeight: '70vh',
+            padding: 'var(--gutter)',
+            borderBottom: '1px solid var(--color-line)',
+          }}
+        >
+          {item.id === 'inicio' ? <h1>{profile.name}</h1> : <h2>{item.label}</h2>}
+          <p>{item.id === 'inicio' ? profile.role : 'Sección en construcción.'}</p>
+        </section>
+      ))}
     </main>
   )
 }
