@@ -1,0 +1,125 @@
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100dvh;
+  padding-block: calc(72px + var(--space-8)) var(--space-16);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.role {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+}
+
+.lead {
+  max-width: 46ch;
+  margin-top: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+/* Panel de código: decorativo, solo en pantallas anchas */
+.panel {
+  display: none;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: var(--space-6);
+  overflow-x: auto;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-surface);
+  background: var(--color-surface-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  line-height: 1.9;
+}
+
+.line {
+  display: block;
+  padding-left: calc(var(--indent) * 2ch);
+  white-space: pre;
+  animation: rise var(--duration-reveal) var(--ease-out) both;
+  animation-delay: calc(450ms + var(--i) * 60ms);
+}
+
+.plain,
+.key {
+  color: var(--color-text-muted);
+}
+
+.keyword,
+.bool {
+  color: var(--color-accent);
+}
+
+.name,
+.string {
+  color: var(--color-text);
+}
+
+/* Entrada: una sola vez, escalonada */
+.reveal {
+  animation: rise var(--duration-reveal) var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 479px) {
+  .actions > * {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-16);
+  }
+
+  .panel {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .line {
+    animation-name: fade;
+    animation-duration: 150ms;
+    animation-delay: 0s;
+  }
+}

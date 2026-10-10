@@ -6,6 +6,12 @@ export const profile = {
   location: 'Bogotá, Colombia',
   email: 'jfonsecaming@gmail.com',
 
+  degree: 'Ingeniería de Sistemas',
+  stack: ['Python', 'JavaScript', 'React', 'PHP'],
+  available: true,
+  heroText:
+    'Ingeniero de Sistemas en formación. Desarrollo aplicaciones full-stack con Python, JavaScript, React y PHP, y busco mi primer rol profesional.',
+
   links: {
     linkedin:
       'https://www.linkedin.com/in/ing-juan-fernando-fonseca-mart%C3%ADnez',
