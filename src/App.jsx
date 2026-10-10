@@ -2,7 +2,7 @@ function App() {
   return (
     <main style={{ padding: 'var(--gutter)' }}>
       <h1>Juan Fernando Fonseca Martínez</h1>
-      <p>Portafolio en construcción.</p>
+        <p>Portafolio en construcción. Prueba de despliegue.</p>
       <p
         style={{
           fontFamily: 'var(--font-mono)',
