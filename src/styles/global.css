@@ -87,3 +87,8 @@ button {
 body:has(dialog[open]) {
   overflow: hidden;
 }
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+}

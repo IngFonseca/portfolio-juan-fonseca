@@ -1,3 +1,5 @@
+import { ArrowDown, DownloadSimple } from '@phosphor-icons/react'
+import Button from './components/Button'
 import Navbar from './components/Navbar'
 import { navItems } from './data/navigation'
 import { profile } from './data/profile'
@@ -21,6 +23,30 @@ function App() {
             <p>
               {item.id === 'inicio' ? profile.role : 'Sección en construcción.'}
             </p>
+            {item.id === 'inicio' && (
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '0.75rem',
+                  marginTop: '1.5rem',
+                }}
+              >
+                <Button
+                  href="#proyectos"
+                  icon={<ArrowDown size={20} aria-hidden="true" />}
+                >
+                  Ver proyectos
+                </Button>
+                <Button
+                  variant="secondary"
+                  href="#contacto"
+                  icon={<DownloadSimple size={20} aria-hidden="true" />}
+                >
+                  Descargar hoja de vida
+                </Button>
+              </div>
+            )}
           </section>
         ))}
       </main>
