@@ -1,44 +1,298 @@
-.section {
-  padding-block: var(--section-padding);
+.section[data-theme='black'] {
+  /* Alto reservado al panel de detalles: igual para todos los proyectos */
+  --panel-min: 19rem;
+  --footer-reserve: calc(var(--panel-min) + 28px + var(--space-4));
+
+  position: relative;
+  padding-block: var(--space-6);
   border-top: 1px solid var(--color-line);
+  overflow-x: clip;
+  /* Foco azul + brillo dorado detrás del protagonista (escenario) */
+  background:
+    radial-gradient(55% 45% at 50% 40%, rgb(15 42 85 / 0.75), transparent 72%),
+    radial-gradient(
+      26% 26% at 50% 34%,
+      color-mix(in srgb, var(--color-accent) 14%, transparent),
+      transparent 70%
+    ),
+    var(--color-bg);
 }
 
-.intro {
-  margin-top: var(--space-4);
-  color: var(--color-text-muted);
-  font-size: 1.125rem;
+/* El escenario toma la altura sobrante: es un contenedor para medir en cqw/cqh */
+.stage {
+  position: relative;
+  /* Alto fijo calculado desde la pantalla, NO desde el contenido del panel */
+  height: clamp(
+    260px,
+    calc(
+      100dvh - 5rem - 2 * var(--space-6) - var(--space-4) - var(--footer-reserve)
+    ),
+    760px
+  );
+  container-type: size;
+  touch-action: pan-y;
+  user-select: none;
 }
 
-.track {
-  /* Distancia hasta el borde del contenedor de 1200 px, para alinear la primera tarjeta con el título */
-  --edge: max(var(--gutter), calc((100% - var(--container)) / 2));
+.scene {
+  /* Tamaños derivados del espacio disponible: nada se sale de la pantalla */
+  --slide-w: min(80cqw, 880px, 116cqh);
+  --slide-top: 24cqh;
+  --ghost-size: min(15vw, 48cqh);
 
-  margin-top: var(--space-8);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: var(--edge);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-control-border) transparent;
+  position: absolute;
+  inset: 0;
 }
 
-.list {
-  display: flex;
-  gap: var(--space-4);
-  width: max-content;
+/* Palabra gigante de fondo: fija; la imagen central la tapa en parte */
+.ghost {
+  position: absolute;
+  top: calc(var(--slide-top) - var(--ghost-size) * 0.5);
+  left: 50%;
+  z-index: 0;
+  translate: -50% 0;
+  color: transparent;
+  font-family: var(--font-display);
+  font-size: var(--ghost-size);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-accent) 45%, transparent);
+  pointer-events: none;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
   margin: 0;
-  padding: var(--space-2) var(--edge) var(--space-4);
+  padding: 0;
   list-style: none;
 }
 
-.item {
-  flex: none;
-  width: min(86vw, 380px);
-  scroll-snap-align: start;
+.slide {
+  position: absolute;
+  top: var(--slide-top);
+  left: 50%;
+  z-index: 1;
+  width: var(--slide-w);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 20px;
+  background: var(--color-surface-1);
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.8);
+  transition:
+    transform 480ms var(--ease-out),
+    opacity 480ms var(--ease-out),
+    filter 480ms var(--ease-out);
+  will-change: transform;
+}
+
+.slide[data-position='active'] {
+  z-index: 3;
+  transform: translateX(-50%);
+}
+
+.slide[data-position='prev'] {
+  z-index: 2;
+  transform: translateX(calc(-50% - 64%)) scale(0.82);
+  opacity: 0.55;
+  filter: blur(3px);
+  cursor: pointer;
+}
+
+.slide[data-position='next'] {
+  z-index: 2;
+  transform: translateX(calc(-50% + 64%)) scale(0.82);
+  opacity: 0.55;
+  filter: blur(3px);
+  cursor: pointer;
+}
+
+.slide[data-position='far-prev'] {
+  transform: translateX(calc(-50% - 110%)) scale(0.7);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide[data-position='far-next'] {
+  transform: translateX(calc(-50% + 110%)) scale(0.7);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  height: 100%;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+/* Flechas integradas en los bordes de la imagen central, a media altura */
+.arrow {
+  position: absolute;
+  top: calc(var(--slide-top) + var(--slide-w) * 0.3125);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  translate: 0 -50%;
+  border: 1px solid color-mix(in srgb, var(--color-text) 30%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-bg) 55%, transparent);
+  color: var(--color-text);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    scale var(--duration-fast) var(--ease-out);
+}
+
+.arrowPrev {
+  left: calc(50% - var(--slide-w) / 2 + 12px);
+}
+
+.arrowNext {
+  right: calc(50% - var(--slide-w) / 2 + 12px);
+}
+
+.arrow:active:not(:disabled) {
+  scale: 0.95;
+}
+
+.arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Panel de vidrio con los detalles del proyecto activo */
+.footer {
+  display: grid;
+  gap: var(--space-4);
+  align-items: end;
+  margin-top: var(--space-4);
+}
+
+.panel {
+  display: grid;
+  align-content: center;
+  width: 100%;
+  min-height: var(--panel-min);
+  padding: var(--space-4) var(--space-6);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-surface);
+  background: color-mix(in srgb, var(--color-surface-1) 72%, transparent);
+  backdrop-filter: blur(14px);
+  animation: panel-in 360ms var(--ease-out) both;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes panel-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Segmentos de navegación directa */
+.dots {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.dot {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dot::before {
+  content: '';
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-text) 28%, transparent);
+  transition:
+    width var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
+}
+
+.dot[aria-current='true']::before {
+  width: 28px;
+  background: var(--color-accent);
+}
+
+@media (hover: hover) {
+  .arrow:hover:not(:disabled) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .dot:hover::before {
+    background: var(--color-text);
+  }
+
+  .dot[aria-current='true']:hover::before {
+    background: var(--color-accent);
+  }
 }
 
 @media (min-width: 1024px) {
-  .item {
-    width: 420px;
+    .section[data-theme='black'] {
+    --panel-min: 15rem;
+    --footer-reserve: var(--panel-min);
+  }
+  .footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    transition: opacity 150ms linear;
+  }
+
+  .panel {
+    animation-name: panel-fade;
+    animation-duration: 150ms;
+  }
+
+  .arrow,
+  .dot::before {
+    transition: none;
   }
 }

@@ -1,0 +1,121 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status {
+  color: var(--color-warning);
+}
+
+.count {
+  margin-left: auto;
+  color: var(--color-accent);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 2px var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+}
+
+.actions > * {
+  flex: 1 1 auto;
+}
+
+.devNote {
+  padding-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.description {
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: 1024px) {
+  .info {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'meta actions'
+      'title actions'
+      'desc actions'
+      'tags actions';
+    column-gap: var(--space-8);
+    row-gap: var(--space-2);
+    align-items: start;
+  }
+
+  .meta {
+    grid-area: meta;
+  }
+
+  .info h3 {
+    grid-area: title;
+  }
+
+  .description {
+    grid-area: desc;
+    max-width: 64ch;
+  }
+
+  .tags {
+    grid-area: tags;
+  }
+
+  .actions {
+    grid-area: actions;
+    flex-direction: column;
+    align-self: end;
+    min-width: 220px;
+    padding-top: 0;
+  }
+
+  .devNote {
+    grid-area: actions;
+    align-self: end;
+    padding-top: 0;
+  }
+}
