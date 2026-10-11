@@ -1,15 +1,17 @@
 import Navbar from './components/Navbar'
 import { navItems } from './data/navigation'
+import { useReveal } from './hooks/useReveal'
 import About from './sections/About'
+import Education from './sections/Education'
 import Hero from './sections/Hero'
 import Projects from './sections/Projects'
 import Technologies from './sections/Technologies'
-import { useReveal } from './hooks/useReveal'
 
-const built = ['inicio', 'sobre-mi', 'tecnologias', 'proyectos']
+const built = ['inicio', 'sobre-mi', 'tecnologias', 'proyectos', 'formacion']
 
 function App() {
   useReveal()
+
   return (
     <>
       <Navbar />
@@ -18,16 +20,17 @@ function App() {
         <About />
         <Technologies />
         <Projects />
+        <Education />
         {navItems
           .filter((item) => !built.includes(item.id))
           .map((item) => (
             <section
               key={item.id}
               id={item.id}
+              data-theme="black"
               style={{
                 minHeight: '70vh',
                 padding: '6rem var(--gutter) var(--gutter)',
-                borderTop: '1px solid var(--color-line)',
               }}
             >
               <h2>{item.label}</h2>

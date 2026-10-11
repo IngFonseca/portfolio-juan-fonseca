@@ -4,7 +4,7 @@ import styles from './About.module.css'
 
 function About() {
   return (
-    <section id="sobre-mi" className={styles.section}>
+    <section id="sobre-mi" className={styles.section} data-theme="black" >
       <div className={`container ${styles.grid}`}>
         <div className={styles.text} data-reveal>
           <h2>{about.heading}</h2>

@@ -1,0 +1,120 @@
+.section {
+  padding-block: var(--section-padding);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-12);
+  margin-top: var(--space-12);
+}
+
+/* Tarjeta de la carrera */
+.degree {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-8);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-surface);
+  background: var(--color-surface-1);
+}
+
+.degree h3 {
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.institution {
+  margin-top: var(--space-4);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.place {
+  color: var(--color-text-muted);
+}
+
+.period {
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.status {
+  align-self: flex-start;
+  padding: 2px var(--space-3);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.graduation {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+/* Lista de certificaciones */
+.certHeading {
+  margin-bottom: var(--space-4);
+}
+
+.certs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-line);
+}
+
+.cert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.certTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.certIssuer {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.certLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-accent);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+@media (hover: hover) {
+  .certLink:hover {
+    color: var(--color-text);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-16);
+    align-items: start;
+  }
+}

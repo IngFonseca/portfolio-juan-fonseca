@@ -142,3 +142,16 @@ h2:not(.sr-only)::before {
     transition-delay: 0ms;
   }
 }
+
+/* Luz azul de ambiente en las secciones negras (lados alternos) */
+[data-theme='black'][data-glow='left'] {
+  background:
+    radial-gradient(42% 46% at 10% 28%, rgb(15 42 85 / 0.5), transparent 70%),
+    var(--color-bg);
+}
+
+[data-theme='black'][data-glow='right'] {
+  background:
+    radial-gradient(42% 46% at 90% 62%, rgb(15 42 85 / 0.5), transparent 70%),
+    var(--color-bg);
+}

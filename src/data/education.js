@@ -1,0 +1,32 @@
+export const education = {
+  degree: 'Ingeniería de Sistemas',
+  institution: 'Universidad Central',
+  location: 'Bogotá, Colombia',
+  period: '2023 – 2028',
+  status: '8.º semestre en curso',
+  graduation: 'Graduación esperada: abril de 2028',
+}
+
+// Sin fechas de expedición ni números de certificado: no se inventan.
+// PENDIENTE (opcional): si una certificación tiene enlace de validación, pégalo en `url`
+// y aparecerá un enlace «Ver certificado». Mientras sea null, no se muestra.
+export const certifications = [
+  {
+    id: 'copnia-etica',
+    title: 'Cátedra de Ética Profesional',
+    issuer: 'Consejo Profesional Nacional de Ingeniería (COPNIA)',
+    url: null,
+  },
+  {
+    id: 'sena-php',
+    title: 'Desarrollo Web con PHP',
+    issuer: 'Servicio Nacional de Aprendizaje (SENA)',
+    url: null,
+  },
+  {
+    id: 'cursa-react',
+    title: 'React JS',
+    issuer: 'Cursa',
+    url: null,
+  },
+]

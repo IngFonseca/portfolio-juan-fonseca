@@ -11,7 +11,7 @@ function getEvidence(skill) {
 
 function Technologies() {
   return (
-    <section id="tecnologias" className={styles.section}>
+    <section id="tecnologias" className={styles.section} data-theme="black">
       <div className="container">
         <h2>Tecnologías con las que trabajo</h2>
 
