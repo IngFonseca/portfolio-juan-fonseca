@@ -6,14 +6,14 @@ function About() {
   return (
     <section id="sobre-mi" className={styles.section}>
       <div className={`container ${styles.grid}`}>
-        <div className={styles.text}>
+        <div className={styles.text} data-reveal>
           <h2>{about.heading}</h2>
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
-        <div className={styles.aside}>
+        <div className={styles.aside} data-reveal style={{ '--reveal-delay': '120ms' }}>
           <dl className={styles.facts}>
             {about.facts.map((fact) => (
               <div key={fact.label} className={styles.fact}>

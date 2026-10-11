@@ -4,10 +4,12 @@ import About from './sections/About'
 import Hero from './sections/Hero'
 import Projects from './sections/Projects'
 import Technologies from './sections/Technologies'
+import { useReveal } from './hooks/useReveal'
 
 const built = ['inicio', 'sobre-mi', 'tecnologias', 'proyectos']
 
 function App() {
+  useReveal()
   return (
     <>
       <Navbar />

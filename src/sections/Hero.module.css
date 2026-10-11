@@ -12,11 +12,30 @@
 }
 
 .role {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   margin-bottom: var(--space-4);
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   font-family: var(--font-mono);
   font-size: 0.875rem;
   letter-spacing: 0.04em;
+}
+
+.role::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.given,
+.surname {
+  display: block;
+}
+
+.surname {
+  color: var(--color-accent);
 }
 
 .lead {

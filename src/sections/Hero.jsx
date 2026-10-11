@@ -54,7 +54,8 @@ function Hero() {
             {profile.role}
           </p>
           <h1 className={styles.reveal} style={{ '--i': 1 }}>
-            {profile.name}
+            <span className={styles.given}>{profile.givenNames}</span>{' '}
+            <span className={styles.surname}>{profile.surnames}</span>
           </h1>
           <p className={`${styles.lead} ${styles.reveal}`} style={{ '--i': 2 }}>
             {profile.heroText}

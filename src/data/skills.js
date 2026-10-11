@@ -40,11 +40,10 @@ export const skillGroups = [
   {
     id: 'herramientas',
     title: 'Herramientas',
-    showEvidence: false, // las herramientas no se asocian a un proyecto concreto
     skills: [
-      { name: 'Git' },
-      { name: 'GitHub' },
-      { name: 'Visual Studio Code' },
+      { name: 'Git', alsoUsedIn: THIS_PORTFOLIO },
+      { name: 'GitHub', alsoUsedIn: THIS_PORTFOLIO },
+      { name: 'Visual Studio Code', alsoUsedIn: THIS_PORTFOLIO },
       { name: 'Postman' },
       { name: 'Trello' },
     ],

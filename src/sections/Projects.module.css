@@ -5,7 +5,6 @@
 
   position: relative;
   padding-block: var(--space-6);
-  border-top: 1px solid var(--color-line);
   overflow-x: clip;
   /* Foco azul + brillo dorado detrás del protagonista (escenario) */
   background:

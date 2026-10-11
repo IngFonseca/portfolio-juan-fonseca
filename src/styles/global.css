@@ -109,3 +109,36 @@ body:has(dialog[open]) {
   background: var(--color-bg);
   color: var(--color-text);
 }
+
+/* Firma visual: línea dorada sobre cada título de sección */
+h2:not(.sr-only)::before {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-bottom: var(--space-4);
+  background: var(--color-accent);
+}
+
+/* Aparición al hacer scroll (una sola vez). Solo se activa si JS cargó. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 450ms var(--ease-out),
+    transform 450ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-ready [data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-reveal] {
+    transform: none;
+    transition: opacity 150ms linear;
+    transition-delay: 0ms;
+  }
+}

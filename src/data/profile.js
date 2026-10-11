@@ -1,5 +1,7 @@
 export const profile = {
   name: 'Juan Fernando Fonseca Martínez',
+  givenNames: 'Juan Fernando',
+  surnames: 'Fonseca Martínez',
   initials: 'JF',
   role: 'Desarrollador de Software Junior',
   title: 'Ingeniero de Sistemas en formación',

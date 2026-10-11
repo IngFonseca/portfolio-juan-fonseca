@@ -1,6 +1,5 @@
 .section {
   padding-block: var(--section-padding);
-  border-top: 1px solid var(--color-line);
 }
 
 .grid {

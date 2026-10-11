@@ -27,8 +27,13 @@ function Technologies() {
         </ul>
 
         <div className={styles.groups}>
-          {skillGroups.map((group) => (
-            <div key={group.id} className={styles.group}>
+          {skillGroups.map((group, index) => (
+            <div
+              key={group.id}
+              className={styles.group}
+              data-reveal
+              style={{ '--reveal-delay': `${(index % 3) * 80}ms` }}
+            >
               <h3>{group.title}</h3>
               <ul className={styles.chips}>
                 {group.skills.map((skill) => {
