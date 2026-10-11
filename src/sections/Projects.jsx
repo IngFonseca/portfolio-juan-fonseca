@@ -4,13 +4,9 @@ import styles from './Projects.module.css'
 
 function Projects() {
   return (
-    <section id="proyectos" className={styles.section}>
+    <section id="proyectos" className={styles.section} data-theme="black">
       <div className="container">
         <h2>Proyectos</h2>
-        <p className={styles.intro}>
-          {projects.length} proyectos entre aplicaciones de escritorio, web y
-          académicas. Desliza para explorarlos.
-        </p>
       </div>
 
       <div

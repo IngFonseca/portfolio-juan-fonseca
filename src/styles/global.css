@@ -104,3 +104,8 @@ body:has(dialog[open]) {
   white-space: nowrap;
   border: 0;
 }
+
+[data-theme] {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
