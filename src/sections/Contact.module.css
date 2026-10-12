@@ -1,0 +1,116 @@
+.section[data-theme='black'] {
+  padding-block: var(--section-padding);
+  /* Luz azul de ambiente, a la derecha, detrás de la lista de enlaces */
+  background:
+    radial-gradient(45% 55% at 85% 55%, rgb(15 42 85 / 0.6), transparent 70%),
+    radial-gradient(
+      22% 28% at 85% 50%,
+      color-mix(in srgb, var(--color-accent) 8%, transparent),
+      transparent 70%
+    ),
+    var(--color-bg);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.intro h2 {
+  max-width: 16ch;
+}
+
+.lead {
+  max-width: 40ch;
+  margin-top: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+/* Lista de canales */
+.links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-line);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-line);
+  text-decoration: none;
+}
+
+.icon {
+  flex: none;
+  color: var(--color-accent);
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.label {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.arrow {
+  flex: none;
+  color: var(--color-text-muted);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .link:hover .value {
+    color: var(--color-accent);
+  }
+
+  .link:hover .arrow {
+    color: var(--color-accent);
+    transform: translate(3px, -3px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: var(--space-16);
+    align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .value,
+  .arrow {
+    transition: none;
+  }
+}
