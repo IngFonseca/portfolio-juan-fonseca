@@ -46,27 +46,46 @@
 }
 
 .outside {
-  display: flex;
-  gap: var(--space-4);
-  margin-top: var(--space-8);
-  padding: var(--space-6);
+  /* Alto mínimo = el que tenía la tarjeta (tus medidas); crece solo si el contenido lo necesita */
+  --outside-h: 174px;
+
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: var(--space-2);
+  min-height: var(--outside-h);
+  margin: var(--space-8) 0 0;
+  padding: var(--space-3) var(--space-6);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-surface);
   background: var(--color-surface-1);
+  text-align: center;
 }
 
-.outsideIcon {
-  flex: none;
+.quote {
+  margin: 0;
+}
+
+.quoteText {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.quoteText strong {
   color: var(--color-accent);
+  font-weight: inherit;
 }
 
-.outside h3 {
-  margin-bottom: var(--space-2);
-}
-
-.outside p {
+.quoteBy {
+  display: grid;
+  gap: 2px;
   color: var(--color-text-muted);
-  font-size: var(--text-small);
+  font-size: 0.8125rem;
+  line-height: 1.4;
 }
 
 @media (min-width: 640px) {
@@ -74,11 +93,17 @@
     grid-template-columns: 8rem 1fr;
     gap: var(--space-4);
   }
+  .outside {
+    --outside-h: 128px;
+  }
 }
 
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
     gap: var(--space-16);
+  }
+  .outside {
+    --outside-h: 151px;
   }
 }

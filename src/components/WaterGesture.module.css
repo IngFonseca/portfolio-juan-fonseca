@@ -1,0 +1,109 @@
+.scene {
+  --cycle: 6s;
+
+  display: block;
+  height: 72px;
+  max-width: 100%;
+  aspect-ratio: 160 / 84;
+  overflow: hidden;
+}
+
+.water,
+.colaLeft,
+.colaRight {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+/* Botella de agua: detrás, oculta al inicio */
+.water {
+  opacity: 0;
+  animation: water var(--cycle) infinite;
+}
+
+/* Las dos colas empiezan juntas, tapando el agua */
+.colaLeft {
+  transform: translateX(-9px);
+  animation: cola-left var(--cycle) infinite;
+}
+
+.colaRight {
+  transform: translateX(9px);
+  animation: cola-right var(--cycle) infinite;
+}
+
+/* Reposo, se apartan a la vez, pausa, vuelven */
+@keyframes cola-left {
+  0%, 12% {
+    transform: translateX(-9px) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  28%, 72% {
+    transform: translateX(-38px) rotate(-90deg);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  88%, 100% {
+    transform: translateX(-9px) rotate(0deg);
+  }
+}
+
+@keyframes cola-right {
+  0%, 12% {
+    transform: translateX(9px) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  28%, 72% {
+    transform: translateX(38px) rotate(90deg);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  88%, 100% {
+    transform: translateX(9px) rotate(0deg);
+  }
+}
+
+/* El agua aparece mientras las colas se apartan y se retira antes de que vuelvan */
+@keyframes water {
+  0%,
+  14% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.86);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  26%,
+  74% {
+    opacity: 1;
+    transform: none;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  84%,
+  100% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.86);
+  }
+}
+
+/* Movimiento reducido: sin animación; se muestra el momento final (agua visible) */
+@media (prefers-reduced-motion: reduce) {
+  .water,
+  .colaLeft,
+  .colaRight {
+    animation: none;
+  }
+
+  .water {
+    opacity: 1;
+    transform: none;
+  }
+
+  .colaLeft {
+    transform: translateX(-36px) rotate(-5deg);
+  }
+
+  .colaRight {
+    transform: translateX(36px) rotate(5deg);
+  }
+}

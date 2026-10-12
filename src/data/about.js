@@ -16,7 +16,9 @@ export const about = {
   ],
 
   outside: {
-    title: 'Fuera del código',
-    text: 'Fútbol. Admiro la disciplina y la constancia de Cristiano Ronaldo, y trato de aplicarlas al estudio y al código.',
+    quote: 'Agua,',
+    highlight: 'Coca-Cola NO',
+    author: 'Cristiano Ronaldo dos Santos Aveiro',
+    note: 'Futbolista Portugués',
   },
 }
