@@ -67,16 +67,6 @@ function Hero() {
             >
               Ver proyectos
             </Button>
-            {profile.cv && (
-              <Button
-                variant="secondary"
-                href={profile.cv.file}
-                download={profile.cv.downloadName}
-                icon={<DownloadSimple size={20} aria-hidden="true" />}
-              >
-                Descargar hoja de vida
-              </Button>
-            )}
           </div>
         </div>
 

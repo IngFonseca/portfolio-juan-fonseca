@@ -18,9 +18,7 @@ export const profile = {
     linkedin:
       'https://www.linkedin.com/in/ing-juan-fernando-fonseca-mart%C3%ADnez',
     github: 'https://github.com/IngFonseca',
-    // PENDIENTE: pega aquí tu URL de Instagram (por ejemplo, 'https://www.instagram.com/tu_usuario').
-    // Mientras sea null, el enlace no aparece en el sitio.
-    instagram: null,
+    instagram: "https://www.instagram.com/fonseca_18_/",
   },
 
   cv: {
