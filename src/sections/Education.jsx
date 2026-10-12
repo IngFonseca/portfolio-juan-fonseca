@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowUpRightIcon } from '@phosphor-icons/react'
+import { ArrowUpRight } from '@phosphor-icons/react'
 import { certifications, education } from '../data/education'
 import styles from './Education.module.css'
 
