@@ -1,5 +1,5 @@
-import { existsSync } from 'node:fs'
-import { join } from 'node:path'
+import { existsSync, readdirSync } from 'node:fs'
+import { basename, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { profile } from '../src/data/profile.js'
 import { projects } from '../src/data/projects.js'
@@ -7,9 +7,15 @@ import { projects } from '../src/data/projects.js'
 const publicDir = fileURLToPath(new URL('../public/', import.meta.url))
 const missing = []
 
+// Comparación sensible a mayúsculas, como en Vercel (Linux)
+function exists(filePath) {
+  const dir = dirname(filePath)
+  return existsSync(dir) && readdirSync(dir).includes(basename(filePath))
+}
+
 function check(urlPath, owner) {
   if (!urlPath || !urlPath.startsWith('/')) return
-  if (!existsSync(join(publicDir, urlPath))) {
+  if (!exists(join(publicDir, urlPath))) {
     missing.push(`${owner}: ${urlPath}`)
   }
 }

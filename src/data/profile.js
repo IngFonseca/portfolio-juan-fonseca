@@ -23,9 +23,8 @@ export const profile = {
     instagram: null,
   },
 
-  // PENDIENTE: cuando tengas el PDF en public/documents/, reemplaza null por:
-  // { file: '/documents/hoja-de-vida-juan-fernando-fonseca.pdf',
-  //   downloadName: 'Hoja-de-vida-Juan-Fernando-Fonseca-Martinez.pdf' }
-  // Mientras sea null, el botón «Descargar hoja de vida» no aparece.
-  cv: null,
+  cv: {
+    file: '/documents/juan_fernando_fonseca_martinez_junior_software_developer.pdf',
+    downloadName: 'Juan_Fernando_Fonseca_Martinez_Junior_Software_Developer.pdf',
+  },
 }
