@@ -81,11 +81,6 @@
   color: var(--color-text-muted);
 }
 
-.neutral {
-  background: var(--color-surface-1);
-  color: var(--color-text);
-}
-
 .dot {
   width: 6px;
   height: 6px;
@@ -113,8 +108,7 @@
 
 @media (hover: hover) {
   .proven:hover,
-  .declared:hover,
-  .neutral:hover {
+  .declared:hover {
     border-color: var(--color-accent);
     color: var(--color-text);
   }

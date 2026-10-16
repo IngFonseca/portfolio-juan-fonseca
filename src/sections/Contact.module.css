@@ -1,14 +1,5 @@
 .section[data-theme='black'] {
   padding-block: var(--section-padding);
-  /* Luz azul de ambiente, a la derecha, detrás de la lista de enlaces */
-  background:
-    radial-gradient(45% 55% at 85% 55%, rgb(15 42 85 / 0.6), transparent 70%),
-    radial-gradient(
-      22% 28% at 85% 50%,
-      color-mix(in srgb, var(--color-accent) 8%, transparent),
-      transparent 70%
-    ),
-    var(--color-bg);
 }
 
 .grid {

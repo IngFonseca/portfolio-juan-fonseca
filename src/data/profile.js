@@ -4,7 +4,6 @@ export const profile = {
   surnames: 'Fonseca Martínez',
   initials: 'JF',
   role: 'Desarrollador de Software Junior',
-  title: 'Ingeniero de Sistemas en formación',
   location: 'Bogotá, Colombia',
   email: 'jfonsecaming@gmail.com',
 

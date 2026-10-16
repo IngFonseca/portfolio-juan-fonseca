@@ -37,13 +37,8 @@ function Technologies() {
               <h3>{group.title}</h3>
               <ul className={styles.chips}>
                 {group.skills.map((skill) => {
-                  const showEvidence = group.showEvidence !== false
-                  const evidence = showEvidence ? getEvidence(skill) : []
-                  const state = !showEvidence
-                    ? 'neutral'
-                    : evidence.length > 0
-                      ? 'proven'
-                      : 'declared'
+                  const evidence = getEvidence(skill)
+                  const state = evidence.length > 0 ? 'proven' : 'declared'
 
                   return (
                     <li

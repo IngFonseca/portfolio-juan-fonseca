@@ -1,4 +1,4 @@
-import { ArrowDown, DownloadSimple } from '@phosphor-icons/react'
+import { ArrowDown} from '@phosphor-icons/react'
 import Button from '../components/Button'
 import { profile } from '../data/profile'
 import styles from './Hero.module.css'

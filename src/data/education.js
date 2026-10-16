@@ -7,9 +7,6 @@ export const education = {
   graduation: 'Graduación esperada: abril de 2028',
 }
 
-// Sin fechas de expedición ni números de certificado: no se inventan.
-// PENDIENTE (opcional): si una certificación tiene enlace de validación, pégalo en `url`
-// y aparecerá un enlace «Ver certificado». Mientras sea null, no se muestra.
 export const certifications = [
   {
     id: 'copnia-etica',
