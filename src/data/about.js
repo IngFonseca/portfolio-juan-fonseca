@@ -1,9 +1,9 @@
 export const about = {
-  heading: 'Desarrollo software de la base de datos a la interfaz.',
+  heading: 'Primero entiendo el problema, después escribo el código.',
 
   paragraphs: [
-    'Estudio Ingeniería de Sistemas en la Universidad Central y trabajo con Python, Java, JavaScript, PHP y React. En mis proyectos aplico arquitectura MVC y bases de datos relacionales.',
-    'Trabajo con metodologías ágiles como Scrum y Kanban, y busco mi primera oportunidad como desarrollador junior.',
+    'Me gusta partir de un problema concreto, como llevar un inventario, gestionar incidentes de soporte o administrar una veterinaria, y construir la solución completa.',
+    'Estudio Ingeniería de Sistemas en la Universidad Central y uso cada proyecto para mejorar cómo analizo, diseño y entrego.',
   ],
 
   facts: [

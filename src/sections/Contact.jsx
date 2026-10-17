@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react'
 import {
   ArrowUpRight,
+  Check,
+  Copy,
   DownloadSimple,
   EnvelopeSimple,
   GithubLogo,
@@ -30,6 +33,7 @@ const rows = [
     href: `mailto:${profile.email}`,
     icon: EnvelopeSimple,
     external: false,
+    copy: true,
   },
   {
     id: 'github',
@@ -50,15 +54,29 @@ const rows = [
 ].filter((row) => row.href)
 
 function Contact() {
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    if (!copied) return
+    const timer = setTimeout(() => setCopied(false), 2000)
+    return () => clearTimeout(timer)
+  }, [copied])
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email)
+      setCopied(true)
+    } catch {
+      // Si el navegador bloquea el portapapeles, se muestra la dirección para copiarla a mano
+      window.prompt('Copia el correo:', profile.email)
+    }
+  }
+
   return (
     <section id="contacto" className={styles.section} data-theme="black">
       <div className={`container ${styles.grid}`}>
         <div className={styles.intro} data-reveal>
           <h2>Disponible para nuevas oportunidades</h2>
-          <p className={styles.lead}>
-            Busco mi primera oportunidad como desarrollador junior. Escríbeme y
-            conversemos.
-          </p>
 
           {profile.cv && (
             <div className={styles.actions}>
@@ -85,23 +103,52 @@ function Contact() {
               : {}
 
             return (
-              <li key={row.id}>
-                <a className={styles.link} href={row.href} {...externalProps}>
+              <li key={row.id} className={styles.item}>
+                <a
+                  className={`${styles.link} ${row.copy ? styles.linkCopy : ''}`}
+                  href={row.href}
+                  {...externalProps}
+                >
                   <Icon className={styles.icon} size={28} aria-hidden="true" />
                   <span className={styles.text}>
                     <span className={styles.label}>{row.label}</span>
                     <span className={styles.value}>{row.value}</span>
                   </span>
-                  <ArrowUpRight
-                    className={styles.arrow}
-                    size={22}
-                    aria-hidden="true"
-                  />
+                  {!row.copy && (
+                    <ArrowUpRight
+                      className={styles.arrow}
+                      size={22}
+                      aria-hidden="true"
+                    />
+                  )}
                 </a>
+
+                {row.copy && (
+                  <button
+                    type="button"
+                    className={styles.copy}
+                    data-copied={copied}
+                    aria-label={copied ? 'Correo copiado' : 'Copiar correo'}
+                    onClick={copyEmail}
+                  >
+                    {copied ? (
+                      <Check size={18} aria-hidden="true" />
+                    ) : (
+                      <Copy size={18} aria-hidden="true" />
+                    )}
+                    <span className={styles.copyText}>
+                      {copied ? 'Copiado' : 'Copiar'}
+                    </span>
+                  </button>
+                )}
               </li>
             )
           })}
         </ul>
+
+        <p className="sr-only" aria-live="polite">
+          {copied ? 'Correo copiado al portapapeles' : ''}
+        </p>
       </div>
     </section>
   )

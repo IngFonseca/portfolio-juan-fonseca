@@ -11,13 +11,6 @@
   max-width: 16ch;
 }
 
-.lead {
-  max-width: 40ch;
-  margin-top: var(--space-6);
-  color: var(--color-text-muted);
-  font-size: 1.125rem;
-}
-
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -102,6 +95,83 @@
 @media (prefers-reduced-motion: reduce) {
   .value,
   .arrow {
+    transition: none;
+  }
+}
+
+/* Botón «Copiar» de la fila del correo */
+.item {
+  position: relative;
+}
+
+.linkCopy {
+  padding-right: 8.5rem;
+}
+
+.copy {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  translate: 0 -50%;
+  border: 1px solid var(--color-control-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    scale var(--duration-fast) var(--ease-out);
+}
+
+.copy:active {
+  scale: 0.97;
+}
+
+.copy[data-copied='true'] {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* En pantallas pequeñas solo se muestra el icono, para no apretar la dirección */
+.copyText {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .copyText {
+    display: inline;
+  }
+}
+
+@media (max-width: 639px) {
+  .linkCopy {
+    padding-right: 3.75rem;
+  }
+
+  .copy {
+    padding: 0;
+  }
+}
+
+@media (hover: hover) {
+  .copy:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy {
     transition: none;
   }
 }
