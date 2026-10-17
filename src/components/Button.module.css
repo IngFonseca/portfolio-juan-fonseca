@@ -32,7 +32,7 @@
 
 @media (hover: hover) {
   .primary:hover {
-    background: color-mix(in srgb, var(--button-bg) 85%, white);
+    background: var(--button-bg-hover);
     transform: translateY(-1px);
   }
 

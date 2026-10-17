@@ -3,6 +3,7 @@ import { navItems } from '../data/navigation'
 import { profile } from '../data/profile'
 import { useActiveSection } from '../hooks/useActiveSection'
 import styles from './Navbar.module.css'
+import ThemeToggle from './ThemeToggle'
 
 const sectionIds = navItems.map((item) => item.id)
 
@@ -40,35 +41,39 @@ function Navbar() {
           <a
             className={styles.brand}
             href="#inicio"
-            aria-label={`${profile.name}, ir al inicio`}
+            aria-label={`${profile.shortName}, ir al inicio`}
           >
-            {profile.initials}
+            {profile.shortName}
           </a>
 
-          <nav className={styles.nav} aria-label="Principal">
-            <ul className={styles.list}>
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    className={styles.link}
-                    href={`#${item.id}`}
-                    aria-current={activeId === item.id ? 'location' : undefined}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className={styles.right}>
+            <nav className={styles.nav} aria-label="Principal">
+              <ul className={styles.list}>
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      className={styles.link}
+                      href={`#${item.id}`}
+                      aria-current={activeId === item.id ? 'location' : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          <button
-            type="button"
-            className={styles.menuButton}
-            aria-haspopup="dialog"
-            onClick={openMenu}
-          >
-            Menú
-          </button>
+            <ThemeToggle />
+
+            <button
+              type="button"
+              className={styles.menuButton}
+              aria-haspopup="dialog"
+              onClick={openMenu}
+            >
+              Menú
+            </button>
+          </div>
         </div>
       </header>
 
@@ -82,13 +87,20 @@ function Navbar() {
             className={styles.brand}
             href="#inicio"
             onClick={closeMenu}
-            aria-label={`${profile.name}, ir al inicio`}
+            aria-label={`${profile.shortName}, ir al inicio`}
           >
-            {profile.initials}
+            {profile.shortName}
           </a>
-          <button type="button" className={styles.menuButton} onClick={closeMenu}>
-            Cerrar
-          </button>
+          <div className={styles.sheetActions}>
+            <ThemeToggle />
+            <button
+              type="button"
+              className={styles.menuButton}
+              onClick={closeMenu}
+            >
+              Cerrar
+            </button>
+          </div>
         </div>
 
         <nav aria-label="Menú móvil">

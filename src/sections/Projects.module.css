@@ -1,4 +1,4 @@
-.section[data-theme='black'] {
+.section{
   /* Alto reservado al panel de detalles: igual para todos los proyectos */
   --panel-min: 19rem;
   --footer-reserve: calc(var(--panel-min) + 28px + var(--space-4));
@@ -8,12 +8,8 @@
   overflow-x: clip;
   /* Foco azul + brillo dorado detrás del protagonista (escenario) */
   background:
-    radial-gradient(55% 45% at 50% 40%, rgb(15 42 85 / 0.75), transparent 72%),
-    radial-gradient(
-      26% 26% at 50% 34%,
-      color-mix(in srgb, var(--color-accent) 14%, transparent),
-      transparent 70%
-    ),
+    radial-gradient(55% 45% at 50% 40%, var(--stage-glow-1), transparent 72%),
+    radial-gradient(26% 26% at 50% 34%, var(--stage-glow-2), transparent 70%),
     var(--color-bg);
 }
 
@@ -80,7 +76,7 @@
   border: 1px solid var(--color-line);
   border-radius: 20px;
   background: var(--color-surface-1);
-  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.8);
+  box-shadow: var(--shadow-lift);
   transition:
     transform 480ms var(--ease-out),
     opacity 480ms var(--ease-out),
@@ -270,7 +266,7 @@
 }
 
 @media (min-width: 1024px) {
-    .section[data-theme='black'] {
+    .section{
     --panel-min: 15rem;
     --footer-reserve: var(--panel-min);
   }

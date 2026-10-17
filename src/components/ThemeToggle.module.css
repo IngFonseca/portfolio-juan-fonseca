@@ -1,0 +1,60 @@
+.toggle {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  flex: none;
+  width: 72px;
+  height: 40px;
+  padding: 3px;
+  border: 1px solid var(--color-control-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color var(--duration-base) var(--ease-out);
+}
+
+/* Pieza dorada: a la derecha (luna) en oscuro, a la izquierda (sol) en claro */
+.knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--button-bg);
+  transform: translateX(32px);
+  transition: transform 260ms var(--ease-out);
+}
+
+.toggle[aria-checked='true'] .knob {
+  transform: none;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  color: var(--color-text-muted);
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+/* El icono del modo activo se lee sobre la pieza dorada */
+.toggle[aria-checked='true'] .sun,
+.toggle[aria-checked='false'] .moon {
+  color: var(--button-text);
+}
+
+@media (hover: hover) {
+  .toggle:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle,
+  .knob,
+  .icon {
+    transition: none;
+  }
+}

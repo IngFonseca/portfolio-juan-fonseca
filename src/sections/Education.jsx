@@ -4,7 +4,7 @@ import styles from './Education.module.css'
 
 function Education() {
   return (
-    <section id="formacion" className={styles.section} data-theme="black">
+    <section id="formacion" className={styles.section}>
       <div className="container">
         <h2>Formación y certificaciones</h2>
 

@@ -55,7 +55,7 @@ function Projects() {
   }
 
   return (
-    <section id="proyectos" className={styles.section} data-theme="black">
+    <section id="proyectos" className={styles.section}>
       <h2 className="sr-only">Proyectos</h2>
 
       <div

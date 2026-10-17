@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,6 +51,17 @@
       name="twitter:image"
       content="https://portfolio-juan-fonseca.vercel.app/og-cover.png"
     />
+        <script>
+      ;(function () {
+        var theme = 'dark'
+        try {
+          if (localStorage.getItem('theme') === 'light') theme = 'light'
+        } catch (error) {}
+        document.documentElement.setAttribute('data-theme', theme)
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f5f1e8' : '#0a0a0c')
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

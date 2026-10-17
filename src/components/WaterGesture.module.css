@@ -107,3 +107,9 @@
     transform: translateX(36px) rotate(5deg);
   }
 }
+
+/* Modo claro: la botella de agua necesita más contraste sobre la tarjeta clara */
+:root[data-theme='light'] .water path:first-child {
+  stroke: #2f7fc1;
+  fill-opacity: 0.35;
+}

@@ -105,11 +105,6 @@ body:has(dialog[open]) {
   border: 0;
 }
 
-[data-theme] {
-  background: var(--color-bg);
-  color: var(--color-text);
-}
-
 /* Firma visual: línea dorada sobre cada título de sección */
 h2:not(.sr-only)::before {
   content: '';

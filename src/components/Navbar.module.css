@@ -49,20 +49,39 @@
 }
 
 .brand {
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-mono);
+  position: relative;
+  padding: var(--space-2) 0;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.02em;
+  line-height: 1;
   text-decoration: none;
-  transition:
-    border-color var(--duration-base) var(--ease-out),
-    transform var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
 }
 
-.brand:active {
-  transform: scale(0.97);
+.brand::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.sheetActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .nav {
@@ -108,8 +127,8 @@
 }
 
 @media (hover: hover) {
-  .brand:hover {
-    border-color: var(--color-accent);
+  .brand:hover::after {
+    transform: scaleX(1);
   }
 
   .link:hover {
@@ -129,7 +148,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .header,
-  .brand,
+  .brand::after,
   .link,
   .link::after {
     transition: none;
@@ -236,5 +255,11 @@
 
   .menuButton {
     transition: none;
+  }
+}
+
+@media (max-width: 359px) {
+  .brand {
+    font-size: 1.0625rem;
   }
 }

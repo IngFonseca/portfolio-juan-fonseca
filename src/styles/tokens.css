@@ -37,9 +37,9 @@
   --duration-reveal: 320ms;
 }
 
-/* ---------- Tema NEGRO (por defecto) ---------- */
+/* ---------- Modo OSCURO (por defecto) ---------- */
 :root,
-[data-theme='black'] {
+:root[data-theme='dark'] {
   color-scheme: dark;
 
   --color-bg: #0a0a0c;
@@ -54,5 +54,34 @@
   --color-warning: #f6c445;
 
   --button-bg: #f6c445;
+  --button-bg-hover: color-mix(in srgb, #f6c445 85%, white);
   --button-text: #0a0a0c;
+
+  --stage-glow-1: rgb(15 42 85 / 0.75);
+  --stage-glow-2: rgb(246 196 69 / 0.14);
+  --shadow-lift: 0 30px 60px -30px rgb(0 0 0 / 0.8);
+}
+
+/* ---------- Modo CLARO ---------- */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --color-bg: #f5f1e8;
+  --color-surface-1: #eae4d8;
+  --color-surface-2: #e0d8c9;
+  --color-line: #d8d0c2;
+  --color-control-border: #7f796b;
+  --color-text: #24231f;
+  --color-text-muted: #625d53;
+  --color-accent: #7f5f1d;
+  --color-on-accent: #f5f1e8;
+  --color-warning: #7f5f1d;
+
+  --button-bg: #7f5f1d;
+  --button-bg-hover: #6c5119;
+  --button-text: #f5f1e8;
+
+  --stage-glow-1: rgb(127 95 29 / 0.12);
+  --stage-glow-2: rgb(127 95 29 / 0.08);
+  --shadow-lift: 0 30px 60px -30px rgb(36 35 31 / 0.35);
 }

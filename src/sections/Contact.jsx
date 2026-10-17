@@ -73,7 +73,7 @@ function Contact() {
   }
 
   return (
-    <section id="contacto" className={styles.section} data-theme="black">
+    <section id="contacto" className={styles.section}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.intro} data-reveal>
           <h2>Disponible para nuevas oportunidades</h2>
