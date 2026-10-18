@@ -4,6 +4,7 @@ export const profile = {
   surnames: 'Fonseca Martínez',
   shortName: 'Juan Fonseca',
   role: 'Desarrollador de Software Junior',
+  status: 'Abierto a oportunidades',
   location: 'Bogotá, Colombia',
   email: 'jfonsecaming@gmail.com',
 

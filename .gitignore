@@ -26,6 +26,7 @@ dist-ssr
 # Variables de entorno
 .env
 .env.*
+!.env.example
 
 # Resultados de pruebas (Playwright)
 playwright-report/
@@ -33,3 +34,6 @@ test-results/
 
 # Ejecutables: van a GitHub Releases, no al repositorio
 *.exe
+.vercel
+.env*
+!.env.example

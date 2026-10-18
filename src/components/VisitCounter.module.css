@@ -1,0 +1,17 @@
+.visits {
+  display: flex;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.number {
+  min-width: 4ch;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
