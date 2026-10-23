@@ -9,7 +9,7 @@ export const projects = [
     title: 'TecnoSuministros',
     description:
       'Sistema de gestión de inventario y ventas con roles de usuario, proveedores, trabajadores, reportes en PDF y alertas de stock bajo.',
-    image: null, // PENDIENTE: '/projects/tecnosuministros.webp'
+    image: '/projects/tecnosuministros.webp', 
     imageAlt: '',
     tags: ['Python', 'Tkinter', 'MySQL', 'FPDF', 'MVC'],
     category: 'desktop',
@@ -17,7 +17,52 @@ export const projects = [
     links: {
       github: 'https://github.com/IngFonseca/TecnoSuministrosS.A.S',
       demo: null,
-      download: null, // PENDIENTE: enlace de GitHub Releases cuando exista
+      download: 'https://github.com/IngFonseca/TecnoSuministros-app/releases/tag/v1.0.0', // PENDIENTE: enlace de GitHub Releases cuando exista
+    },
+  },
+    {
+    id: 'siuu-bross',
+    title: 'Siuu.Bross',
+    description: 'Juego 2D desarrollado con Python y Pygame.',
+    image: '/projects/siuu.bross.webp',
+    imageAlt: '',
+    tags: ['Python', 'Pygame'],
+    category: 'game',
+    status: 'completed',
+    links: { 
+      github: 'https://github.com/IngFonseca/Siuu-Bross.git', 
+      demo: null, 
+      download: null 
+    },
+  },
+  {
+    id: 'algoritmo-fifo',
+    title: 'Algoritmo FIFO',
+    description: 'Implementación del algoritmo FIFO, desarrollada como proyecto técnico y académico.',
+    image: '/projects/algoritmo-fifo.webp',
+    imageAlt: '',
+    tags: [], // PENDIENTE
+    category: 'academic',
+    status: 'completed',
+    links: { 
+      github: 'https://github.com/IngFonseca/Algoritmo_FIFO.git', 
+      demo: null, 
+      download: null 
+    },
+  },
+  {
+    id: 'simulador-shell',
+    title: 'Simulador Shell SO',
+    description: 'Simulador de una shell de sistema operativo, desarrollado como proyecto técnico.',
+    image: '/projects/shell-personalizado.webp',
+    imageAlt: '',
+    tags: [], // PENDIENTE
+    category: 'academic',
+    status: 'completed',
+    links: { 
+      github: 'https://github.com/IngFonseca/Shell_Personalizado.git', 
+      demo: null, 
+      download: null 
     },
   },
   {
@@ -39,7 +84,7 @@ export const projects = [
   {
     id: 'veterinaria',
     title: 'Sistema Web de Gestión de una Veterinaria',
-    description: 'Sistema web de gestión para una veterinaria.',
+    description: 'Por actualizar en el portafolio',
     image: null,
     imageAlt: '',
     tags: [], // PENDIENTE: tecnologías que usaste
@@ -54,7 +99,7 @@ export const projects = [
   {
     id: 'tarjetero-react',
     title: 'Tarjetero Web con React',
-    description: 'Tarjetero web desarrollado con React.',
+    description: 'Por actualizar en el portafolio',
     image: null,
     imageAlt: '',
     tags: ['React'],
@@ -65,47 +110,14 @@ export const projects = [
   {
     id: 'cine-php',
     title: 'Gestión de Sillas de un Cine',
-    description: 'Gestión de la reserva de sillas de un cine, desarrollada con PHP.',
+    description: 'Por actualizar en el portafolio',
     image: null,
     imageAlt: '',
     tags: ['PHP'],
     category: 'web',
     status: 'completed',
     links: { github: null, demo: null, download: null },
-  },
-  {
-    id: 'siuu-bross',
-    title: 'Siuu.Bross',
-    description: 'Juego 2D desarrollado con Python y Pygame.',
-    image: null,
-    imageAlt: '',
-    tags: ['Python', 'Pygame'],
-    category: 'game',
-    status: 'completed',
-    links: { github: null, demo: null, download: null },
-  },
-  {
-    id: 'algoritmo-fifo',
-    title: 'Algoritmo FIFO',
-    description: 'Implementación del algoritmo FIFO, desarrollada como proyecto técnico y académico.',
-    image: null,
-    imageAlt: '',
-    tags: [], // PENDIENTE
-    category: 'academic',
-    status: 'completed',
-    links: { github: null, demo: null, download: null },
-  },
-  {
-    id: 'simulador-shell',
-    title: 'Simulador Shell SO',
-    description: 'Simulador de una shell de sistema operativo, desarrollado como proyecto técnico.',
-    image: null,
-    imageAlt: '',
-    tags: [], // PENDIENTE
-    category: 'academic',
-    status: 'completed',
-    links: { github: null, demo: null, download: null },
-  },
+  }
 ]
 
 export const categoryLabels = {

@@ -16,7 +16,7 @@ export const profile = {
 
   links: {
     linkedin:
-      'https://www.linkedin.com/in/ing-juan-fernando-fonseca-mart%C3%ADnez',
+      'https://www.linkedin.com/in/juan-fernando-fonseca-mart%C3%ADnez-ing/',
     github: 'https://github.com/IngFonseca',
     instagram: "https://www.instagram.com/fonseca_18_/",
   },
