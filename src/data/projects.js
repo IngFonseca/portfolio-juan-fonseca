@@ -8,16 +8,31 @@ export const projects = [
     id: 'tecnosuministros',
     title: 'TecnoSuministros',
     description:
-      'Sistema de gestión de inventario y ventas con roles de usuario, proveedores, trabajadores, reportes en PDF y alertas de stock bajo.',
+      'App de escritorio para inventario y ventas conectada a una API REST propia (FastAPI y MySQL): cuatro roles con permisos, ventas con IVA y descuento, alertas de stock y reportes PDF.',
     image: '/projects/tecnosuministros.webp', 
     imageAlt: '',
-    tags: ['Python', 'Tkinter', 'MySQL', 'FPDF', 'MVC'],
+    tags: [
+      'Python',
+      'Tkinter',
+      'FastAPI',
+      'MySQL',
+      'FPDF',
+      'REST API',
+      'JWT',
+      'MVC',
+      'POO',
+      'CRUD',
+      'PyInstaller',
+      'Render',
+    ],
     category: 'desktop',
     status: 'completed',
+    note: 'Demo para Windows. Windows puede mostrar un aviso porque el archivo no está firmado, y la primera conexión puede tardar hasta un minuto.',
     links: {
       github: 'https://github.com/IngFonseca/TecnoSuministrosS.A.S',
       demo: null,
-      download: 'https://github.com/IngFonseca/TecnoSuministros-app/releases/tag/v1.0.0', // PENDIENTE: enlace de GitHub Releases cuando exista
+      download:
+        'https://github.com/IngFonseca/TecnoSuministrosS.A.S/releases/latest/download/TecnoSuministros.exe',
     },
   },
     {

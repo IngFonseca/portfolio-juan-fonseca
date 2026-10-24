@@ -60,7 +60,7 @@ function ProjectInfo({ project, position, total }) {
             <Button
               variant={links.demo ? 'secondary' : 'primary'}
               href={links.download}
-              external
+              download
               aria-label={`Descargar ejecutable: ${title}`}
               icon={<DownloadSimple size={20} aria-hidden="true" />}
             >

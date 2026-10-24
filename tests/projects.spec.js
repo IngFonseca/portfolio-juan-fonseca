@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test'
 import { projects } from '../src/data/projects.js'
 
+// Texto del botón de descarga (cámbialo si lo renombraste, por ejemplo a «Descargar demo»)
+const DOWNLOAD_LABEL = 'Descargar ejecutable'
 const last = projects.length - 1
 const dotName = (index) => `Proyecto ${index + 1}: ${projects[index].title}`
 
@@ -86,8 +88,14 @@ for (const [index, project] of projects.entries()) {
       })
       if (href) {
         await expect(link).toHaveAttribute('href', href)
-        await expect(link).toHaveAttribute('target', '_blank')
-        await expect(link).toHaveAttribute('rel', /noopener/)
+        if (label === DOWNLOAD_LABEL) {
+          // La descarga empieza sin abrir pestañas y apunta a un archivo, no a una página
+          await expect(link).not.toHaveAttribute('target', '_blank')
+          expect(href).toMatch(/\.exe$/)
+        } else {
+          await expect(link).toHaveAttribute('target', '_blank')
+          await expect(link).toHaveAttribute('rel', /noopener/)
+        }
       } else {
         await expect(link).toHaveCount(0)
       }
