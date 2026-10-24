@@ -11,20 +11,7 @@ export const projects = [
       'App de escritorio para inventario y ventas conectada a una API REST propia (FastAPI y MySQL): cuatro roles con permisos, ventas con IVA y descuento, alertas de stock y reportes PDF.',
     image: '/projects/tecnosuministros.webp', 
     imageAlt: '',
-    tags: [
-      'Python',
-      'Tkinter',
-      'FastAPI',
-      'MySQL',
-      'FPDF',
-      'REST API',
-      'JWT',
-      'MVC',
-      'POO',
-      'CRUD',
-      'PyInstaller',
-      'Render',
-    ],
+    tags: ['Python','Tkinter','FastAPI','MySQL','FPDF','REST API','JWT','MVC','POO','CRUD','PyInstaller','Render'],
     category: 'desktop',
     status: 'completed',
     note: 'Demo para Windows. Windows puede mostrar un aviso porque el archivo no está firmado, y la primera conexión puede tardar hasta un minuto.',
@@ -35,49 +22,55 @@ export const projects = [
         'https://github.com/IngFonseca/TecnoSuministrosS.A.S/releases/latest/download/TecnoSuministros.exe',
     },
   },
-    {
+  {
     id: 'siuu-bross',
     title: 'Siuu.Bross',
-    description: 'Juego 2D desarrollado con Python y Pygame.',
+    description:
+      'Juego de plataformas 2D con pygame: 10 niveles de dificultad creciente, enemigos, plataformas móviles, vidas y puntuación. Los niveles son datos, así que agregar uno no toca el código.',
     image: '/projects/siuu.bross.webp',
     imageAlt: '',
-    tags: ['Python', 'Pygame'],
+    tags: ['Python', 'Pygame', 'MVC', 'POO', 'PyInstaller'],
     category: 'game',
     status: 'completed',
-    links: { 
-      github: 'https://github.com/IngFonseca/Siuu-Bross.git', 
-      demo: null, 
-      download: null 
+    note: 'Juego para Windows, sin instalar Python. Windows puede mostrar un aviso porque el archivo no está firmado.',
+    links: {
+      github: 'https://github.com/IngFonseca/Siuu-Bross',
+      demo: null,
+      download: 'https://github.com/IngFonseca/Siuu-Bross/releases/latest/download/SiuuBross.exe',
     },
   },
   {
     id: 'algoritmo-fifo',
-    title: 'Algoritmo FIFO',
-    description: 'Implementación del algoritmo FIFO, desarrollada como proyecto técnico y académico.',
+    title: 'Simulador del Algoritmo FIFO',
+    description:
+      'Simulador de planificación de procesos FIFO con interfaz gráfica: cola de capacidad limitada, procesos aleatorios, control de velocidad y métricas de espera, retorno y uso de CPU.',
     image: '/projects/algoritmo-fifo.webp',
     imageAlt: '',
-    tags: [], // PENDIENTE
+    tags: ['Python', 'Tkinter', 'MVC', 'POO', 'PyInstaller'],
     category: 'academic',
     status: 'completed',
-    links: { 
-      github: 'https://github.com/IngFonseca/Algoritmo_FIFO.git', 
-      demo: null, 
-      download: null 
+    note: 'Ejecutable para Windows, sin instalar Python. Windows puede mostrar un aviso porque el archivo no está firmado.',
+    links: {
+      github: 'https://github.com/IngFonseca/Algoritmo_FIFO',
+      demo: null,
+      download: 'https://github.com/IngFonseca/Algoritmo_FIFO/releases/latest/download/Algoritmo_FIFO.exe',
     },
   },
   {
     id: 'simulador-shell',
-    title: 'Simulador Shell SO',
-    description: 'Simulador de una shell de sistema operativo, desarrollado como proyecto técnico.',
+    title: 'Shell Personalizado',
+    description:
+      'Shell de consola con 10 comandos propios en español para consultar procesos, memoria, red y discos, y terminar procesos con confirmación y protección de los críticos del sistema.',
     image: '/projects/shell-personalizado.webp',
     imageAlt: '',
-    tags: [], // PENDIENTE
-    category: 'academic',
+    tags: ['Python', 'psutil', 'tabulate', 'MVC', 'POO', 'PyInstaller'],
+    category: 'technical',
     status: 'completed',
-    links: { 
-      github: 'https://github.com/IngFonseca/Shell_Personalizado.git', 
-      demo: null, 
-      download: null 
+    note: 'Aplicación de consola: abre el .exe o ejecútala con Python 3.8+. Windows puede mostrar un aviso porque el archivo no está firmado.',
+    links: {
+      github: 'https://github.com/IngFonseca/Shell_Personalizado',
+      demo: null,
+      download: 'https://github.com/IngFonseca/Shell_Personalizado/releases/latest/download/Shell.exe',
     },
   },
   {
