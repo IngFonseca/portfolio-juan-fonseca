@@ -10,7 +10,7 @@ export const projects = [
     description:
       'App de escritorio para inventario y ventas conectada a una API REST propia (FastAPI y MySQL): cuatro roles con permisos, ventas con IVA y descuento, alertas de stock y reportes PDF.',
     image: '/projects/tecnosuministros.webp', 
-    imageAlt: '',
+    imageAlt: 'Panel principal de TecnoSuministros con el resumen de ventas e inventario',
     tags: ['Python','Tkinter','FastAPI','MySQL','FPDF','REST API','JWT','MVC','POO','CRUD','PyInstaller','Render'],
     category: 'desktop',
     status: 'completed',
@@ -28,7 +28,7 @@ export const projects = [
     description:
       'Juego de plataformas 2D con pygame: 10 niveles de dificultad creciente, enemigos, plataformas móviles, vidas y puntuación. Los niveles son datos, así que agregar uno no toca el código.',
     image: '/projects/siuu.bross.webp',
-    imageAlt: '',
+    imageAlt: 'Pantalla principal de Siuu.Bross, botones de jugar y salir, teclas con los cuales jugar',
     tags: ['Python', 'Pygame', 'MVC', 'POO', 'PyInstaller'],
     category: 'game',
     status: 'completed',
@@ -45,7 +45,7 @@ export const projects = [
     description:
       'Simulador de planificación de procesos FIFO con interfaz gráfica: cola de capacidad limitada, procesos aleatorios, control de velocidad y métricas de espera, retorno y uso de CPU.',
     image: '/projects/algoritmo-fifo.webp',
-    imageAlt: '',
+    imageAlt: 'Simulador FIFO en ejecución con la cola de procesos, el proceso en CPU y las métricas de espera y retorno',
     tags: ['Python', 'Tkinter', 'MVC', 'POO', 'PyInstaller'],
     category: 'academic',
     status: 'completed',
@@ -62,7 +62,7 @@ export const projects = [
     description:
       'Shell de consola con 10 comandos propios en español para consultar procesos, memoria, red y discos, y terminar procesos con confirmación y protección de los críticos del sistema.',
     image: '/projects/shell-personalizado.webp',
-    imageAlt: '',
+    imageAlt: 'Consola del Shell Personalizado mostrando en una tabla la salida del comando misprocesos',
     tags: ['Python', 'psutil', 'tabulate', 'MVC', 'POO', 'PyInstaller'],
     category: 'technical',
     status: 'completed',
@@ -79,7 +79,7 @@ export const projects = [
     description:
       'Gestión de incidentes con CRUD y persistencia en JSON, clasificación N1/N2/N3 y agentes de IA para diagnóstico, soluciones y escalamiento.',
     image: null,
-    imageAlt: '',
+    imageAlt: 'Base de Conocimiento de soporte técnico con la lista de incidentes clasificados por nivel N1, N2 y N3',
     tags: ['Python', 'JSON', 'CRUD'],
     category: 'technical',
     status: 'completed',
@@ -94,7 +94,7 @@ export const projects = [
     title: 'Sistema Web de Gestión de una Veterinaria',
     description: 'Por actualizar en el portafolio',
     image: null,
-    imageAlt: '',
+    imageAlt: 'Página principal del sistema web de la veterinaria con [qué se ve: menú, citas, lista de mascotas...]',
     tags: [], // PENDIENTE: tecnologías que usaste
     category: 'web',
     status: 'completed',
@@ -109,7 +109,7 @@ export const projects = [
     title: 'Tarjetero Web con React',
     description: 'Por actualizar en el portafolio',
     image: null,
-    imageAlt: '',
+    imageAlt: 'Tarjetero web hecho con React mostrando [qué se ve: varias tarjetas con ...]',
     tags: ['React'],
     category: 'web',
     status: 'completed',
@@ -120,7 +120,7 @@ export const projects = [
     title: 'Gestión de Sillas de un Cine',
     description: 'Por actualizar en el portafolio',
     image: null,
-    imageAlt: '',
+    imageAlt: 'Selección de sillas del cine con la cuadrícula de asientos libres y ocupados',
     tags: ['PHP'],
     category: 'web',
     status: 'completed',

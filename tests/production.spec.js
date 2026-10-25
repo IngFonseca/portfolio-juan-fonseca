@@ -5,6 +5,13 @@ test.skip(
   'Solo se ejecuta contra el sitio publicado: define BASE_URL',
 )
 
+// El navegador de estas pruebas se identifica como «headless», así que el servidor
+// lo trata como bot y no suma visitas a tu contador real.
+test.use({ userAgent: 'HeadlessChrome/141.0 (Playwright production check)' })
+
+// Una detrás de otra: evita que unas pruebas alteren lo que miden las otras
+test.describe.configure({ mode: 'default' })
+
 test('la función /api/visits está publicada y devuelve un total numérico', async ({
   request,
 }) => {
@@ -16,9 +23,7 @@ test('la función /api/visits está publicada y devuelve un total numérico', as
   expect(Number.isInteger(body.total)).toBe(true)
 })
 
-// El User-Agent incluye «bot» y «headless»: el servidor lo ignora, así que esta prueba
-// no suma visitas a tu contador real.
-test('una petición automatizada recibe el total pero no lo modifica', async ({
+test('una petición automatizada recibe el total, pero el servidor no la cuenta', async ({
   request,
   baseURL,
 }) => {
@@ -30,8 +35,10 @@ test('una petición automatizada recibe el total pero no lo modifica', async ({
   expect(response.ok()).toBe(true)
 
   const body = await response.json()
+  // El servidor afirma que no sumó esta petición
   expect(body.counted).toBe(false)
-  expect(body.total).toBe(before)
+  // Si entró una visita real mientras tanto, el total puede haber subido, nunca bajar
+  expect(body.total).toBeGreaterThanOrEqual(before)
 })
 
 test('el pie de página publicado muestra un total real', async ({ page }) => {
