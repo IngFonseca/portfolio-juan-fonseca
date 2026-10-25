@@ -60,6 +60,8 @@
   --stage-glow-1: rgb(15 42 85 / 0.75);
   --stage-glow-2: rgb(246 196 69 / 0.14);
   --shadow-lift: 0 30px 60px -30px rgb(0 0 0 / 0.8);
+  --ghost-stroke: rgb(246 196 69 / 0.45);
+  --ghost-stroke-width: 1px;
 }
 
 /* ---------- Modo CLARO ---------- */
@@ -84,4 +86,6 @@
   --stage-glow-1: rgb(127 95 29 / 0.12);
   --stage-glow-2: rgb(127 95 29 / 0.08);
   --shadow-lift: 0 30px 60px -30px rgb(36 35 31 / 0.35);
+  --ghost-stroke: rgb(127 95 29 / 0.75);
+  --ghost-stroke-width: 1.5px;
 }

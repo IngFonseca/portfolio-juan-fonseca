@@ -53,7 +53,7 @@
   letter-spacing: -0.04em;
   line-height: 1;
   white-space: nowrap;
-  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-accent) 45%, transparent);
+  -webkit-text-stroke: var(--ghost-stroke-width) var(--ghost-stroke);
   pointer-events: none;
 }
 
